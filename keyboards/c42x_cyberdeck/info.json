@@ -1,0 +1,21 @@
+{
+    "manufacturer": "Richard Kraaijenhagen",
+    "keyboard_name": "c42x_cyberdeck",
+    "maintainer": "riichard",
+    "url": "",
+    "layouts": {
+        "LAYOUT": {
+            "layout": [
+                { "x": 0, "y": 0 }
+            ]
+        }
+    },
+    "features": {
+        "bootmagic": true,
+        "command": true,
+        "console": true,
+        "extrakey": true,
+        "mousekey": true,
+        "nkro": true
+    }
+}

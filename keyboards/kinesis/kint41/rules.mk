@@ -3,7 +3,7 @@ MCU_SERIES = MIMXRT1062
 MCU_LDSCRIPT = MIMXRT1062
 MCU_STARTUP = MIMXRT1062
 BOARD = IC_TEENSY_4_1
-MCU  = cortex-m4
+MCU = cortex-m4
 ARMV = 7
 CONSOLE_ENABLE = yes         # Console for debug
 COMMAND_ENABLE = yes        # Commands for debug and configuration
@@ -13,5 +13,4 @@ COMMAND_ENABLE = yes        # Commands for debug and configuration
 # pressed.
 DEBOUNCE_TYPE = sym_eager_pk
 
-#Specify firmware format that is copied to root qmk_firmware folder
 FIRMWARE_FORMAT = hex

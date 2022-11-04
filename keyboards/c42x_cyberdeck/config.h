@@ -17,8 +17,8 @@
 #pragma once
 
 /* key matrix size */
-#define MATRIX_ROWS 15
-#define MATRIX_COLS 7
+#define MATRIX_ROWS 8
+#define MATRIX_COLS 11
 
 /*
  * Keyboard Matrix Assignments
@@ -32,32 +32,29 @@
  */
 #define MATRIX_ROW_PINS               \
     {                                 \
-        LINE_PIN8,      /* ROW_EQL */ \
-            LINE_PIN9,  /* ROW_1 */   \
-            LINE_PIN10, /* ROW_2 */   \
-            LINE_PIN11, /* ROW_3 */   \
-            LINE_PIN7,  /* ROW_4 */   \
-            LINE_PIN16, /* ROW_5 */   \
-            LINE_PIN5,  /* ROW_6 */   \
-            LINE_PIN3,  /* ROW_7 */   \
-            LINE_PIN4,  /* ROW_8 */   \
-            LINE_PIN1,  /* ROW_9 */   \
-            LINE_PIN0,  /* ROW_0 */   \
-            LINE_PIN2,  /* ROW_MIN */ \
-            LINE_PIN17, /* ROW_ESC */ \
-            LINE_PIN23, /* ROW_F1 */  \
-            LINE_PIN21 /* ROW_F2 */  \
+        LINE_PIN23,     /* ROW_1  = 1  */   \
+        LINE_PIN22,     /* ROW_2  = 3  */   \
+        LINE_PIN2,      /* ROW_3  = 4  */   \
+        LINE_PIN3,      /* ROW_4  = 6  */   \
+        LINE_PIN4,      /* ROW_5  = 8  */   \
+        LINE_PIN7,      /* ROW_6  = 14 */   \
+        LINE_PIN8,      /* ROW_7  = 18 */   \
+        LINE_PIN15      /* ROW_8  = 33 */   \
     }
 
 #define MATRIX_COL_PINS             \
     {                               \
-        LINE_PIN18,     /* COL_0 */ \
-            LINE_PIN14, /* COL_1 */ \
-            LINE_PIN15, /* COL_2 */ \
-            LINE_PIN20, /* COL_3 */ \
-            LINE_PIN22, /* COL_4 */ \
-            LINE_PIN19, /* COL_5 */ \
-            LINE_PIN6   /* COL_6 */ \
+        LINE_PIN21,     /* COL_0  = 9 */ \
+        LINE_PIN5,      /* COL_1  = 10 */ \
+        LINE_PIN20,     /* COL_2  = 11 */ \
+        LINE_PIN6,      /* COL_3  = 12 */ \
+        LINE_PIN19,     /* COL_4  = 13 */ \
+        LINE_PIN18,     /* COL_5  = 15 */ \
+        LINE_PIN9,      /* COL_6  = 20 */ \
+        LINE_PIN10,     /* COL_7  = 22 */ \
+        LINE_PIN17,     /* COL_8  = 23 */ \
+        LINE_PIN16,     /* COL_9  = 25 */ \
+        LINE_PIN11      /* COL_10 = 26 */ \
     }
 
 

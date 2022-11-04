@@ -1,3 +1,6 @@
+# 2022-11-05
+- add layers, check if shift works, and make alternative layers for the keypad
+
 # 2022-11-04
 - hid_listen seems to work based on source and makefile. See ~/dev/hid_listen
 - logging tends to break when console is enabled outside of keyboard/rules.mk
@@ -11,6 +14,12 @@
   issues. And then change the layout.
   THis seems to be a good basis now. Saving to git. Will now continue to
   carefully change the layout while the console works.
+- start with reassigning pins, only active pins are now connected to the
+  teensyduino
+- keymap layout file is created
+- console suddenly unresponsive, compilation works
+- compilation had errors, errors fixed. Everything works
+- need to redeisgn and remap keys. not sure if going with macros:w
 
 
 # 2022-08-01

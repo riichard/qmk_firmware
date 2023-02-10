@@ -37,8 +37,8 @@
         LINE_PIN2,      /* ROW_3  = 4  */   \
         LINE_PIN3,      /* ROW_4  = 6  */   \
         LINE_PIN4,      /* ROW_5  = 8  */   \
-        LINE_PIN7,      /* ROW_6  = 14 */   \
-        LINE_PIN8,      /* ROW_7  = 18 */   \
+        LINE_PIN8,      /* ROW_6  = 14 */   \
+        LINE_PIN9,      /* ROW_7  = 18 */   \
         LINE_PIN15      /* ROW_8  = 33 */   \
     }
 
@@ -51,10 +51,10 @@
         LINE_PIN19,     /* COL_4  = 13 */ \
         LINE_PIN18,     /* COL_5  = 15 */ \
         LINE_PIN9,      /* COL_6  = 20 */ \
-        LINE_PIN10,     /* COL_7  = 22 */ \
+        LINE_PIN11,     /* COL_7  = 22 */ \
         LINE_PIN17,     /* COL_8  = 23 */ \
         LINE_PIN16,     /* COL_9  = 25 */ \
-        LINE_PIN11      /* COL_10 = 26 */ \
+        LINE_PIN7      /* COL_10 = 26 */ \
     }
 
 
@@ -72,7 +72,7 @@
 
 // The Teensy 4.1 consumes about 100 mA of current at its full speed of 600 MHz
 // as per https://www.pjrc.com/store/teensy41.html
-#define USB_MAX_POWER_CONSUMPTION 100
+#define USB_MAX_POWER_CONSUMPTION 300
 
 /* We use the i.MX RT1060 high-speed GPIOs (GPIO6-9) which are connected to the
  * AHB bus (AHB_CLK_ROOT), which runs at the same speed as the ARM Core Clock,

@@ -1,3 +1,12 @@
+# 2022-11-27
+- lights work
+- implement OSM
+
+# 2022-11-18
+- for easy ctrl shift or alt without holding two keys the leader seemed
+  suitable. But its limited to one key only
+- one-shot-keys is a better option: https://github.com/qmk/qmk_firmware/blob/master/docs/one_shot_keys.md
+
 # 2022-11-05
 - add layers, check if shift works, and make alternative layers for the keypad
 
@@ -20,7 +29,6 @@
 - console suddenly unresponsive, compilation works
 - compilation had errors, errors fixed. Everything works
 - need to redeisgn and remap keys. not sure if going with macros:w
-
 
 # 2022-08-01
 - created c42x_cyberdeck

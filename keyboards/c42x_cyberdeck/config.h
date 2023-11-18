@@ -44,9 +44,9 @@
 
 #define MATRIX_COL_PINS             \
     {                               \
-        LINE_PIN21,     /* COL_0  = 9 */ \
+        LINE_PIN20,     /* COL_0  = 9 */ \
         LINE_PIN5,      /* COL_1  = 10 */ \
-        LINE_PIN20,     /* COL_2  = 11 */ \
+        LINE_PIN14,     /* COL_2  = 11 */ \
         LINE_PIN6,      /* COL_3  = 12 */ \
         LINE_PIN19,     /* COL_4  = 13 */ \
         LINE_PIN18,     /* COL_5  = 15 */ \
@@ -83,9 +83,9 @@
 #define GPIO_INPUT_PIN_DELAY 0
 
 #define LED_PIN_ON_STATE 37
-/*
-#define LED_NUM_LOCK_PIN LINE_PIN26
-#define LED_CAPS_LOCK_PIN LINE_PIN12
-#define LED_SCROLL_LOCK_PIN LINE_PIN25
-#define LED_COMPOSE_PIN LINE_PIN24
-*/
+
+#define LED_NUM_LOCK_PIN LINE_PIN40
+#define LED_CAPS_LOCK_PIN LINE_PIN39
+#define LED_SCROLL_LOCK_PIN LINE_PIN38
+#define LED_COMPOSE_PIN LINE_PIN36
+

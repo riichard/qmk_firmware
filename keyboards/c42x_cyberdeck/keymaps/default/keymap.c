@@ -49,17 +49,17 @@ const key_override_t **key_overrides = (const key_override_t *[]) {
 
 const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
 [_BASE] = LAYOUT(
-    KC_ESC,                                                              KC_F5,
-    KC_TAB,                                                              KC_F6,
+    KC_ESC,                                                              KC_LEFT,
+    KC_TAB,                                                              KC_RIGHT,
     OSM(MOD_LALT),                                                              KC_F7,
     OSM(MOD_LCTL),                                                              TG(_NUMERIC),
 
     KC_ENTER,   TG(_NAV),   KC_UP,  KC_DOWN,    OSM(MOD_LSFT),    KC_F12,     KC_F13,     KC_WH_U,    KC_WH_D,
-    KC_A,       KC_B,       KC_C,   KC_D,       KC_E,       KC_F,       KC_ACL0,    KC_MS_U,    KC_BTN2,
-    KC_G,       KC_H,       KC_I,   KC_J,       KC_K,       KC_L,       KC_MS_L,    KC_BTN1,    KC_MS_R,
-    KC_M,       KC_N,       KC_O,   KC_P,       KC_Q,       KC_R,       KC_ACL1,    KC_MS_D,    KC_9,
+    KC_A,       KC_B,       KC_C,   KC_D,       KC_E,       KC_F,       KC_LEFT_PAREN,    KC_RIGHT_PAREN,    KC_COLON,
+    KC_G,       KC_H,       KC_I,   KC_J,       KC_K,       KC_L,       KC_LEFT_BRACKET,    KC_RIGHT_BRACKET,    KC_6,
+    KC_M,       KC_N,       KC_O,   KC_P,       KC_Q,       KC_R,       KC_LEFT_CURLY_BRACE,    KC_RIGHT_CURLY_BRACE,    KC_9,
                 KC_S,       KC_T,   KC_U,       KC_V,       KC_W,       KC_DOT,     KC_0,
-                KC_X,       KC_Y,   KC_Z,       KC_BSPC,    KC_ESC,     KC_SPC,     KC_SLSH
+                KC_X,       KC_Y,   KC_Z,       KC_BSPC,    KC_SPC,     KC_MINS,     KC_SLSH
     ),
 
 [_NAV] = LAYOUT(
@@ -89,7 +89,7 @@ const uint16_t PROGMEM keymaps[][MATRIX_ROWS][MATRIX_COLS] = {
             _______,_______,_______,_______,_______,_______,_______
     )
 };
-2
+
 bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   // If console is enabled, it will print the matrix position and status of each key pressed
 #ifdef CONSOLE_ENABLE
@@ -98,15 +98,26 @@ bool process_record_user(uint16_t keycode, keyrecord_t *record) {
   return true;
 }
 
-void keyboard_pre_init_user(void) {
-    setPinOutput(LINE_PIN27); // OFFSET
-    setPinOutput(LINE_PIN28); // DGRAD
-    setPinOutput(LINE_PIN29); // DR
-    setPinOutput(LINE_PIN30); // DSPLY
-    setPinOutput(LINE_PIN31); // APRCH
-    setPinOutput(LINE_PIN32); // MSG
-}
+#define ANN_OFFSET LINE_PIN26
+#define ANN_DGRAD LINE_PIN29
+#define ANN_DR LINE_PIN27
+#define ANN_DSPLY LINE_PIN28
+#define ANN_MSG LINE_PIN25
+#define ANN_APRCH LINE_PIN24
 
+
+void keyboard_pre_init_user(void) {
+    setPinOutput(ANN_OFFSET);
+    setPinOutput(ANN_DGRAD);
+    setPinOutput(ANN_DR);
+    setPinOutput(ANN_DSPLY);
+    setPinOutput(ANN_APRCH);
+    setPinOutput(ANN_MSG);
+
+
+    writePinHigh(LINE_PIN24);
+}
+/*
 layer_state_t layer_state_set_user(layer_state_t state) {
     uprintf("Layer: %u\n", get_highest_layer(state));
     switch (get_highest_layer(state)) {
@@ -123,7 +134,7 @@ layer_state_t layer_state_set_user(layer_state_t state) {
     }
     return state;
 }
-
+*/
 /*
 bool caps_word_press_user(uint16_t keycode) {
     switch (keycode) {
@@ -151,11 +162,11 @@ bool caps_word_press_user(uint16_t keycode) {
 void caps_word_set_user(bool active) {
     if (active) {
         uprint("Caps word on");
-        writePinHigh(LINE_PIN37);
+        /* writePinHigh(LINE_PIN37); */
         // Do something when Caps Word activates.
     } else {
         uprint("Caps word off");
-        writePinLow(LINE_PIN37);
+        /* writePinLow(LINE_PIN37); */
         // Do something when Caps Word deactivates.
     }
 }
@@ -168,6 +179,7 @@ void keyboard_post_init_user(void) {
   //debug_mouse=true;
 }
 
+/*
 void oneshot_mods_changed_user(uint8_t mods) {
   if (mods & MOD_MASK_SHIFT) {
     println("Oneshot mods SHIFT");
@@ -191,3 +203,4 @@ void oneshot_mods_changed_user(uint8_t mods) {
     writePinLow(LINE_PIN31);
   }
 }
+*/
